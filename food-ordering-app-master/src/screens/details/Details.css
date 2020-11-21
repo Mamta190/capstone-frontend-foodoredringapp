@@ -1,0 +1,174 @@
+.rcard-main {
+    padding: 25px;
+    background: #e7e7e7;
+    overflow: hidden;
+    display: flex;
+}
+
+.rcard-mainSM {
+    padding: 25px;
+    background: #e7e7e7;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.rcard-left {
+    flex: 25%;
+}
+
+.rcard-leftSM {
+    width: 100%;
+}
+
+.rcard-img {
+    min-width: 250px;
+    width: 100%;
+    height: 200px;
+}
+
+.rcard-right {
+    padding-left: 20px;
+    flex: 75%;
+}
+
+.rcard-rightSM {
+    margin: auto;
+    width: 100%;
+    text-align: center;
+}
+
+.upper-case {
+    text-transform: uppercase;
+}
+
+.rcard-category {
+    font-weight: bold;
+}
+
+.rcard-right-bottom {
+/*    display: flex;
+    justify-content: space-between;*/
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.rcard-right-bottom div{
+    width: 50%;
+}
+
+.section2 {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 20px;
+    margin-right: 40px;
+}
+
+.section2SM {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: auto;
+}
+
+.item-section {
+    padding: 25px;
+    width: 40%;
+}
+
+.item-sectionSM {
+    padding: 25px;
+    flex: 100%;
+}
+
+.mcard-category {
+    font-weight: bold !important;
+}
+
+.mcard-main {
+    padding: 10px 0;
+}
+
+.item-veg {
+    color: #5a9a5a;
+}
+
+.item-nonveg {
+    color: #be4a47;
+}
+
+.item-name {
+    text-transform: capitalize;
+}
+
+.item-add {
+    font-size: small !important;
+    padding: 0 !important;
+}
+
+.item-menu {
+    display: flex;
+    padding: 5px 0;
+    justify-content: right;
+}
+
+.cart-section {
+    padding: 25px;
+    width: 35%;
+}
+
+.cart-sectionM {
+    padding: 25px;
+    width: 45%;
+}
+
+.cart-sectionSM {
+    padding: 25px;
+    width: 100%;
+}
+
+.cart-main{
+/*    padding: 25px !important;*/
+}
+
+.cart-header{
+    font-weight: bold;
+    font-style: initial;
+    padding-bottom: 15px;
+}
+
+.cart-header i {
+    padding-right: 20px;
+}
+
+.cart-title {
+    font-size: x-large;
+}
+
+.cart-total {
+    display: flex;
+    margin: 10px auto auto;
+}
+
+.cart-total p {
+    font-weight: bold !important;
+}
+
+.badge {
+    font-style: initial !important;
+}
+
+.badge span {
+    z-index: 0 !important;
+}
+
+.cart-button button {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.amount {
+    text-align: end !important;
+}
