@@ -1,0 +1,24 @@
+.menu-button{
+    margin-right: 2px;
+}
+.header-container{
+    background-color: #A9A9A9!important;
+}
+.tabs{
+    margin-bottom: 20px;
+}
+.dispNone{
+    display: none;
+}
+.dispBlock{
+    display: block;
+}
+.red{
+    color: red;
+}
+.form-fields{
+    display: flex;
+    flex-direction: column;
+    padding: 0px 20px;
+    max-width: 300px;
+}
