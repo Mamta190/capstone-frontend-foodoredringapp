@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import HomeRCard from "../../common/home/HomeRCard";
+import HomeRCard from "../../common/restaurants/RestaurantCard";
 import './Home.css'
 import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
@@ -7,7 +7,7 @@ import Header from "../../common/header/Header";
 import "../../../node_modules/font-awesome/css/font-awesome.css"
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 
-// Constants for varying screen size
+// varifying the screen size
 const withMediaQuery = () => Component => props => {
     const isXtraSmallScreen = useMediaQuery('(max-width:650px)');
     const isSmallScreen = useMediaQuery('(max-width:1000px)');
@@ -16,7 +16,7 @@ const withMediaQuery = () => Component => props => {
                       isXtraSmallScreen={isXtraSmallScreen} {...props} />;
 };
 
-// Home page rendering
+// Rendering HomePage
 class Home extends Component {
 
     constructor() {
@@ -30,7 +30,7 @@ class Home extends Component {
 
     handleRestaurantNavigation = (restaurantId) => this.restaurantDetails(restaurantId);
 
-//
+
     componentDidMount() {
         this.mounted = true;
         this.getRestaurants();
@@ -73,7 +73,7 @@ class Home extends Component {
         );
     }
 
-    // Fetches the restaurants from backend
+    // Fetching restaurants from backend
     getRestaurants = () => {
         const headers = {'Accept': 'application/json'}
         let that = this;
@@ -93,12 +93,12 @@ class Home extends Component {
         });
     }
 
-    // Navigate to Restaurant Details page along with restaurantID clicked
+    // Takes to Restaurant page with restaurantID
     restaurantDetails = (restaurantId) => {
         this.props.history.push("/restaurant/" + restaurantId);
     }
 
-    // Function to search for Restaurant
+    // Function for Restaurant search
     searchHandler = (event) => {
         let that = this;
         const headers = {'Accept': 'application/json'}
