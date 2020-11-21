@@ -227,7 +227,7 @@ class Header extends Component{
             isAnyRequiredFieldEmpty=true;
         }
 
-        {/*Do further validation of user input only if both input fields are not empty*/}
+        /*Do further validation of user input only if both input fields are not empty*/
         if(isAnyRequiredFieldEmpty===false){
             /*try to login only if the contact number is valid*/
             if(this.isValidContactNoForLogin(this.state.contactno)){
@@ -235,7 +235,7 @@ class Header extends Component{
                 const headers={'Accept':'application/json','authorization':"Basic " + window.btoa(this.state.contactno + ":" + this.state.password)}
                 fetch("http://localhost:8080/api/customer/login",{method:'POST',headers}).then(function (response){
                     if(response.status === 200){
-                        {/*set session variable access token.*/}
+                        /*set session variable access token.*/
                         sessionStorage.setItem("access-token",  response.headers.get('access-token'));
                         return response.json();
                     }else{
@@ -271,22 +271,22 @@ class Header extends Component{
             isAnyRequiredFieldEmpty = true;
         }
 
-        {/*checking if password is empty*/}
+        /*checking if password is empty*/
 
         if (this.isPasswordEmpty(this.state.signUpPassword)) {
             isAnyRequiredFieldEmpty = true;
         }
 
-    {/*checking if contact number is empty*/}
+    /*checking if contact number is empty*/
 
         if (this.isContactNumberEmpty(this.state.signUpContactno)) {
             isAnyRequiredFieldEmpty = true;
         }
-        {/*checking if email id is empty*/}
+    /*checking if email id is empty*/
         if (this.isEmailEmpty(this.state.email)) {
             isAnyRequiredFieldEmpty = true;
         }
-        {/*check if user inputs are valid*/}
+        /*check if user inputs are valid*/
 
         if (!this.isEmailIdValid(this.state.email)) {
             isAnyValidationFailed = false;
@@ -297,7 +297,7 @@ class Header extends Component{
         if (!this.isValidContactNo(this.state.signUpContactno)) {
             isAnyValidationFailed = false;
         }
-        {/*try to register the user only when are required inout fields are not empty and are valid inputs*/}
+        /*try to register the user only when are required inout fields are not empty and are valid inputs*/
 
         if(isAnyValidationFailed===false && isAnyRequiredFieldEmpty===false){
             let that=this;
@@ -312,7 +312,7 @@ class Header extends Component{
             fetch("http://localhost:8080/api/customer/signup",{method:'POST',headers,body:dataSignUp}).then(function (response){
                 if(response.status === 201){
 
-                   {/*set state variables on successful registration*/}
+                   /*set state variables on successful registration*/
 
                     that.setState({signUpErrorSpan:'dispNone'})
                     that.setState({signUpError:{}})
@@ -323,7 +323,7 @@ class Header extends Component{
                     throw response;
                 }
             }).catch( err => {
-               { /*set state variables on failure to register the user*/}
+                /*set state variables on failure to register the user*/
                 err.text().then( errorMessage => {
                     that.setState({signUpErrorSpan:'dispBlock'})
                     that.setState({signUpError:JSON.parse(errorMessage)})
@@ -416,7 +416,7 @@ class Header extends Component{
             return false;
         }
     }
-    
+
     isValidContactNo =(contactno)=>{
         const isValidContactNo = new RegExp('^\\d{10}$');
         if(!isValidContactNo.test(contactno) && !this.isContactNumberEmpty(contactno)){
