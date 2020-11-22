@@ -1,6 +1,6 @@
 import React, {Component} from "react";
+import './Home.css';
 import HomeRCard from "../../common/restaurants/RestaurantCard";
-import './Home.css'
 import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
 import Header from "../../common/header/Header";
