@@ -1,22 +1,22 @@
 import React, {Component} from "react";
 import './Home.css';
-import HomeRCard from "../../common/restaurants/RestaurantCard";
+import RestaurantCard from "../../common/restaurants/RestaurantCard";
 import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
 import Header from "../../common/header/Header";
 import "../../../node_modules/font-awesome/css/font-awesome.css"
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 
-// varifying the screen size
+/* varifying the screen size*/
 const withMediaQuery = () => Component => props => {
-    const isXtraSmallScreen = useMediaQuery('(max-width:650px)');
+    const isExtraSmallScreen = useMediaQuery('(max-width:650px)');
     const isSmallScreen = useMediaQuery('(max-width:1000px)');
     const isMediumScreen = useMediaQuery('(max-width:1350px)');
     return <Component isSmallScreen={isSmallScreen} isMediumScreen={isMediumScreen}
-                      isXtraSmallScreen={isXtraSmallScreen} {...props} />;
+                      isExtraSmallScreen={isExtraSmallScreen} {...props} />;
 };
 
-// Rendering HomePage
+/* Providing HomePage*/
 class Home extends Component {
 
     constructor() {
@@ -39,10 +39,10 @@ class Home extends Component {
     render() {
         return (
             <div>
-                {/* Render components only after mounted is true */}
+                {/* Provide components only after mounted is true */}
                 {this.mounted === true ?
                     <div>
-                        {/* Render Header component */}
+                        {/* Provide Header component */}
                         <Header searchHandler={this.searchHandler} showSearch={true}/>
                         {this.state.loading === true ?
                             <Typography className="loading-spinner" variant="h4"
@@ -58,11 +58,11 @@ class Home extends Component {
                                     :
                                     this.state.restaurants.map(restaurant => (
                                         <Box key={restaurant.id}
-                                             className={this.props.isXtraSmallScreen ? "card-mainXSM" :
+                                             className={this.props.isExtraSmallScreen ? "card-mainXSM" :
                                                  (this.props.isSmallScreen ? "card-mainSM" :
                                                      (this.props.isMediumScreen ? "card-mainM" : "card-main"))}>
-                                            {/* Render Restaurant cards components */}
-                                            <HomeRCard restaurant={restaurant}
+                                            {/* Provide Restaurant cards components */}
+                                            <RestaurantCard restaurant={restaurant}
                                                        handleRestaurantNavigation={this.handleRestaurantNavigation}/>
                                         </Box>
                                     ))}
@@ -73,7 +73,7 @@ class Home extends Component {
         );
     }
 
-    // Fetching restaurants from backend
+    /* Fetching the details of restaurants from backend*/
     getRestaurants = () => {
         const headers = {'Accept': 'application/json'}
         let that = this;
@@ -93,12 +93,12 @@ class Home extends Component {
         });
     }
 
-    // Takes to Restaurant page with restaurantID
+    /* Takes to Restaurant page with restaurantID*/
     restaurantDetails = (restaurantId) => {
         this.props.history.push("/restaurant/" + restaurantId);
     }
 
-    // Function for Restaurant search
+    /* Function for Restaurant search*/
     searchHandler = (event) => {
         let that = this;
         const headers = {'Accept': 'application/json'}

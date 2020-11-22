@@ -396,6 +396,7 @@ class Header extends Component{
         }
     }
     
+    /*Check if email is valid*/
     isEmailIdValid = (email) =>{
         let isValid = EmailVaildator.validate(email)
         if(!isValid && !this.isEmailEmpty(email)){
@@ -407,6 +408,7 @@ class Header extends Component{
         }
     }
 
+    /*Check password is empty or not for login*/
     isPasswordEmptyForLogin=(password)=>{
         if(password===""){
             this.setState({passwordRequired:'dispBlock'})
@@ -417,6 +419,7 @@ class Header extends Component{
         }
     }
 
+    /*check if contact no. is valid or not with RegEx*/
     isValidContactNo =(contactno)=>{
         const isValidContactNo = new RegExp('^\\d{10}$');
         if(!isValidContactNo.test(contactno) && !this.isContactNumberEmpty(contactno)){
@@ -427,6 +430,8 @@ class Header extends Component{
             return false;
         }
     }
+
+    /*check if password is valid or not*/
     isPasswordValid =(password) =>{
         const isValidPassword = new RegExp('^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$');
         if(!isValidPassword.test(password) && !this.isPasswordEmpty(password)){

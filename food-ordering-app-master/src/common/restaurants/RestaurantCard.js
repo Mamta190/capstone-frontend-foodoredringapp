@@ -7,7 +7,7 @@ import CardMedia from "@material-ui/core/CardMedia";
 import "font-awesome/css/font-awesome.css"
 
 
-// Home restaurant card component created
+/* Home restaurant card component created*/
 export default function HomeRCard(props) {
 
     return (
