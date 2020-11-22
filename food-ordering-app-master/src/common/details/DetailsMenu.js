@@ -5,7 +5,7 @@ import AddIcon from '@material-ui/icons/Add';
 import IconButton from "@material-ui/core/IconButton";
 import Grid from "@material-ui/core/Grid";
 
-// Component for Details Restaurant Menu Card section
+// Component for Details Restaurant's Menu section
 export default function DetailsMenuCard(props) {
     let variant = props.isSmallScreen ? "subtitle2" : (props.isMediumScreen ? "subtitle1" : "body1") ;
 

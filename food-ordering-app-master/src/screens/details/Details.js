@@ -8,14 +8,14 @@ import DetailsCart from "../../common/details/DetailsCart";
 import Notification from "../../common/notification/Notification";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 
-// Constants for varying screen size
+// Constants for verifying screen size
 const withMediaQuery = () => Component => props => {
     const isSmallScreen = useMediaQuery('(max-width:700px)');
     const isMediumScreen = useMediaQuery('(max-width:1000px)');
     return <Component isSmallScreen={isSmallScreen} isMediumScreen={isMediumScreen} {...props} />;
 };
 
-// Details page rendering
+// Rendering the Details page
 class Details extends Component {
     constructor() {
         super();
