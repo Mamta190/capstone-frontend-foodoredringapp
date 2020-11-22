@@ -9,6 +9,7 @@ import "font-awesome/css/font-awesome.css"
 export default function OrderSummaryCard(props) {
 
     return (
+        /*Card oredr summary*/
         <Card className="order-summary-card">
             <CardContent>
                 <Box display="flex" flexDirection="column">

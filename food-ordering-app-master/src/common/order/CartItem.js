@@ -50,7 +50,7 @@ const useStyles = makeStyles({
     }
 });
 
-// Component for Cart Item section
+/* Component for Cart Item section*/
 export default function CartItem(props) {
 
     const classes = useStyles();
